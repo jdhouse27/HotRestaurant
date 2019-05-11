@@ -108,8 +108,8 @@
         alert("Clearing...");
 
         $.ajax({ url: "/api/clear", method: "POST"}).then(function(){
-          $("#waitList").empty();
-          $("#tableList").empty();
+          $("#wait-section").empty();
+          $("#reservation-section").empty();
 
         });
       }
