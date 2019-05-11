@@ -14,6 +14,7 @@ app.use(express.json());
 
 const reservations = [
     {
+        routeName: "",
         name: "Iron Man",
         phone: "555.555.5555",
         email: "theIronMan@avengers.com",
@@ -43,7 +44,7 @@ app.post("/api/reservations", function(req, res) {
   
     // Using a RegEx Pattern to remove spaces from newReservation
     // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    newReservation.unique = newReservation.name.replace(/\s+/g, "").toLowerCase();
+    newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
   
     console.log(newReservation);
   
