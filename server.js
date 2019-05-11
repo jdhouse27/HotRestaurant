@@ -18,7 +18,7 @@ const reservations = [
         name: "Iron Man",
         phone: "555.555.5555",
         email: "theIronMan@avengers.com",
-        unique: "IronMan"
+        uniqueid: "IronMan"
     }
 ];
 
