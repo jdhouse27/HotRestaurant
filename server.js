@@ -49,6 +49,11 @@ app.get("/api/waitlist", function(req, res) {
   return res.json(waitList);
 });
 
+app.get("/api/clear", function(req, res) {
+    return res.json(clear);
+  });
+
+
 // Create New Reservations - takes in JSON input
 app.post("/api/reservations", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
@@ -57,16 +62,20 @@ app.post("/api/reservations", function(req, res) {
   
     console.log(newReservation);
 
-        if (reservations.length<5){
+        if (reservations.length < 5){
             reservations.push(newReservation);
         } else {           
-            waitList.push(newReservation);
-            // res.json(newReservation);
+            waitList.push(newReservation); 
         }      
+        res.json(newReservation);
     
-    res.json(newReservation);
-  });
+    });
+    
+    app.post("/api/clear", function(req, res) {   
 
+        let clear = req.body;
+        res.json(clear);
+    });
 
 // Starts the server to begin listening
 // ===========================================================
