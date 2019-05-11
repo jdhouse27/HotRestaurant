@@ -34,7 +34,7 @@
           <div  class="card-body">
             <ol id= "reservation-section" class="list-group">
 
-              
+
             </ol>
           </div>
         </div>
@@ -50,11 +50,10 @@
             <h3><strong>Waiting List</strong></h3>
           </div>
           <div class="card-body">
-            <!-- <h2 id="name">Yoda</h2>
-              <div id="stats">
-                <h3><strong>Role:</strong> <span id="role">Jedi Master</span></h3>
-                <h3><strong>Age:</strong> <span id="age">900</span></h3>
-                <h3><strong>Force Points:</strong> <span id="force-points">2000</span></h3> -->
+              <ol id= "wait-section" class="list-group">
+
+
+              </ol>
           </div>
         </div>
       </div>
@@ -68,16 +67,30 @@
     $.get("/api/reservations", function(data) {
       for (var i = 0; i < data.length; i++) {
         console.log(data[i]);
-        var listGroupItem = $("<li class='list-group-item'>");
+        let listGroupItem = $("<li class='list-group-item'>");
 
-        listGroupItem.append($("<h2>").text("Name: " + data[i].name));
-        listGroupItem.append($("<h3>").text("Phone: " + data[i].phone));
-        listGroupItem.append($("<h3>").text("Email: " + data[i].email));
-        listGroupItem.append($("<h3>").text("Unique ID: " + data[i].uniqueid));
+          listGroupItem.append($("<h2>").text("Name: " + data[i].name));
+          listGroupItem.append($("<h3>").text("Phone: " + data[i].phone));
+          listGroupItem.append($("<h3>").text("Email: " + data[i].email));
+          listGroupItem.append($("<h3>").text("Unique ID: " + data[i].uniqueid));
 
-        $("#reservation-section").append(listGroupItem);
-      }
-    });
+          $("#reservation-section").append(listGroupItem);
+        }
+      });
+
+      $.get("/api/waitlist", function(data) {
+      for (var i = 0; i < data.length; i++) {
+        console.log(data[i]);
+        let listGroupItem = $("<li class='list-group-item'>");
+
+          listGroupItem.append($("<h2>").text("Name: " + data[i].name));
+          listGroupItem.append($("<h3>").text("Phone: " + data[i].phone));
+          listGroupItem.append($("<h3>").text("Email: " + data[i].email));
+          listGroupItem.append($("<h3>").text("Unique ID: " + data[i].uniqueid));
+
+          $("#wait-section").append(listGroupItem);
+        }
+      });
   </script>
 </body>
 
