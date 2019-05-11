@@ -26,8 +26,12 @@ const reservations = [
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
   });
+
+app.get("/view", function(req, res) {
+    res.sendFile(path.join(__dirname, "view.html"));
+  });
   
-app.get("/add", function(req, res) {
+app.get("/reservations", function(req, res) {
   res.sendFile(path.join(__dirname, "reservations.html"));
 });
 

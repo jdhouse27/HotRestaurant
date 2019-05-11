@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hot Restaurant</title>
+  <title>Hot Table</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,11 +14,11 @@
 
   <div class="container">
     <div class="jumbotron">
-      <h1><i class="fa fa-fire"></i> Hot Restaurant</h1>
+      <h1> Hot Restaurant</h1>
       <h3>Make your reservation</h3>
       <hr>
       <a href="/view"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
-      <a href="/home"><button class="btn btn-primary btn-lg"><span class="fa fa-home"></span> Home</button></a>
+      <a href="/"><button class="btn btn-primary btn-lg"><span class="fa fa-home"></span> Home</button></a>
     </div>
     <div class="row">
 
@@ -60,23 +60,23 @@
         </div>
 
 <script type="text/javascript">
-          // Question: What does this code do?
-          $("#add-btn").on("click", function(event) {
-            event.preventDefault();
+  // Question: What does this code do?
+  $("#add-btn").on("click", function(event) {
+    event.preventDefault();
       
-            var newReservation = {
-              name: $("#name").val().trim(),
-              phone: $("#phone").val().trim(),
-              email: $("#email").val().trim(),
-              uniqueid: $("#uniqueid").val().trim()
-            };
+    var newReservation = {
+      name: $("#name").val().trim(),
+      phone: $("#phone").val().trim(),
+      email: $("#email").val().trim(),
+      uniqueid: $("#uniqueid").val().trim()
+    };
       
-            // Question: What does this code do??
-            $.post("/api/reservations", newReservation)
-              .then(function(data) {
-                console.log(data);
-                alert("Adding reservation...");
-              });
+    // Question: What does this code do??
+    $.post("/api/reservations", newReservation)
+      .then(function(data) {
+        console.log(data);
+        alert("Adding reservation...");
+      });
       
           });
   </script>
